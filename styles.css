@@ -1,0 +1,714 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #111;
+    color: #ddd;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    background-color: #222;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+header .logo h1 {
+    font-size: 2rem;
+    color: #fff;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 30px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #ddd;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #fff;
+}
+
+.hero {
+    height: 100vh;
+    background: 
+        linear-gradient(135deg, rgba(34, 34, 34, 0.9), rgba(0, 0, 0, 0.7)),
+        url('jacob.png'); /* Remplacez 'your-image-path.jpg' par le chemin de 'jacob.png' */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s ease;
+}
+
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    filter: blur(25px);  /* Flou léger pour un effet de profondeur */
+    z-index: 1;
+}
+
+.hero-content {
+    z-index: 2;
+    animation: fadeInUp 1s ease-out forwards;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3); /* Lueur douce autour du texte */
+}
+
+.hero-content h2 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.hero-content p {
+    font-size: 1.6rem;
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: 0.5s;
+    color: #bbb;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Effet de bruit et de texture subtil */
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('noise-texture.png'); /* Image de bruit légère pour la texture */
+    opacity: 0.1;  /* Légère transparence pour ne pas nuire à la lisibilité */
+    z-index: 0;
+}
+
+
+.projects {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: #111;
+}
+
+.projects h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+.project-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+.project-card {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 350px; /* Hauteur fixe de la case */
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.project-card .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6); /* Ombre sombre pour la lisibilité */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.project-card .overlay h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.project-card .overlay p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #ddd;
+}
+
+.project-card .overlay .view-more {
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border: 2px solid #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.project-card .overlay .view-more:hover {
+    background-color: #fff;
+    color: #333;
+}
+
+
+.skills {
+    background-color: #222;
+    padding: 80px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.skills h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.skills-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    margin-top: 40px;
+}
+
+.skill {
+    background-color: #333;
+    padding: 25px;
+    border-radius: 15px;
+    font-size: 1.5rem;
+    color: #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    border: 2px solid #555;
+}
+
+.skill i {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.skill:hover {
+    transform: translateY(-10px);
+    background-color: #444;
+    border-color: #fff;
+}
+
+.skill:hover i {
+    transform: scale(1.2);  /* Effet de zoom sur l'icône */
+}
+
+.skill span {
+    font-size: 1.2rem;
+    color: #bbb;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+@media screen and (max-width: 768px) {
+    .skills h2 {
+        font-size: 2rem;
+    }
+
+    .skill {
+        padding: 20px;
+    }
+
+    .skills-list {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+}
+
+
+.experience {
+    padding: 80px 20px;
+    background-color: #121212;
+    text-align: center;
+    color: #ddd;
+}
+
+.experience h2 {
+    font-size: 2.8rem;
+    margin-bottom: 50px;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.experience h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    width: 80px;
+    height: 2px;
+    background-color: #ffffff; /* Couleur moderne */
+    transform: translateX(-50%);
+}
+
+.experience-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    justify-content: center;
+}
+
+.experience-item {
+    background: #1c1c1c;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.experience-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+    background-color: #333; /* Couleur légèrement plus claire au survol */
+}
+
+.experience-item .experience-icon {
+    font-size: 3rem;
+    color: #ffffff; /* Couleur iconique moderne */
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+.experience-item:hover .experience-icon {
+    color: #fff; /* Changer la couleur de l'icône au survol */
+}
+
+.experience-item h3 {
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.experience-item p {
+    font-size: 1.2rem;
+    color: #bbb;
+    line-height: 1.6;
+}
+
+.experience-item .date {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #888;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .experience h2 {
+        font-size: 2.2rem;
+    }
+    .experience-items {
+        grid-template-columns: 1fr; /* Une colonne sur les petits écrans */
+    }
+}
+
+
+
+.contact {
+    padding: 60px 20px;
+    background-color: #333;
+    text-align: center;
+}
+
+.contact form input,
+.contact form textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    background-color: #444;
+    border: 1px solid #555;
+    border-radius: 10px;
+    color: #ddd;
+}
+
+.contact form button {
+    background-color: #000;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.contact form button:hover {
+    background-color: #444;
+    transform: translateY(-5px);
+}
+
+footer {
+    padding: 20px;
+    background-color: #222;
+    text-align: center;
+    color: #fff;
+}
+
+header {
+    display: flex;
+    justify-content: center;  /* Centre les éléments de la nav horizontalement */
+    align-items: center;
+    padding: 20px 40px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(34, 34, 34, 0.7)); /* Dégradé sombre */
+    backdrop-filter: blur(15px);  /* Flou pour un look premium */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);  /* Ombre plus nette */
+    border-radius: 10px;  /* Coins arrondis pour un effet doux */
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+header nav {
+    display: flex;
+    justify-content: center;  /* Centre les éléments de navigation */
+    align-items: center;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    margin-left: 40px;  /* Espacement entre les éléments */
+}
+
+header nav ul li:first-child {
+    margin-left: 0; /* Supprime l'espacement avant le premier élément */
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #fff;  /* Texte en blanc */
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-in-out;
+}
+
+header nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+header nav ul li a:hover {
+    color: #333;
+    background-color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 20px 20px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    header nav ul li {
+        margin-left: 0;
+        margin-bottom: 15px;
+    }
+}
+
+.scroll-down-arrow {
+    width: 30px;
+    height: 30px;
+    border: solid 10px #fff;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 5px;
+    margin-top: 20px;
+    transform: rotate(45deg);
+    animation: bounce 1.5s infinite; /* Animation de rebond */
+    position: absolute; /* Assurez-vous que la flèche est bien positionnée */
+    bottom: 30px; /* Distance du bas de la section */
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0) rotate(45deg);
+    }
+    50% {
+        transform: translateY(10px) rotate(45deg);
+    }
+    100% {
+        transform: translateY(0) rotate(45deg);
+    }
+}
+
+.contact {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(34, 34, 34, 0.8)),
+                url('contact-background.jpg'); /* Image de fond personnalisée */
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.contact h2 {
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 40px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.social-media {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-link {
+    color: #fff;
+    font-size: 2.5rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-link:hover {
+    color: #00b3b3;  /* Couleur accentuée sur hover */
+    transform: translateY(-5px);  /* Légère translation pour dynamisme */
+}
+
+.social-link i {
+    transition: transform 0.3s ease;
+}
+
+.social-link:hover i {
+    transform: scale(1.2);  /* Zoom lors du survol */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #555;
+    background-color: #444;
+    color: #ddd;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #ffffff;  /* Accent sur focus */
+    background-color: #333;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 179, 179, 0.5);
+}
+
+form button {
+    background: #333; /* Couleur de fond sombre */
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Ombre subtile */
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+form button:hover {
+    background: #444; /* Légère variation pour un effet de survol */
+    transform: translateY(-5px);  /* Légère translation lors du hover */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5); /* Ombre plus prononcée */
+}
+
+form button:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2); /* Légère lumière subtile */
+    border-radius: 50%;
+    transition: all 0.4s ease;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+form button:hover:before {
+    transform: translate(-50%, -50%) scale(1); /* Effet d'ondulation au hover */
+}
+
+form button:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4); /* Ombre réduite lors du clic */
+}
+
+/* Animation Fade In */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+/* Animation Slide In from left */
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-in-left {
+    opacity: 0;
+    animation: slideInLeft 1s ease-out forwards;
+}
+
+/* Animation Slide In from right */
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-in-right {
+    opacity: 0;
+    animation: slideInRight 1s ease-out forwards;
+}
+
+
+/* Le point qui suit le curseur */
+#cursor {
+    position: fixed;
+    width: 10px;  /* Taille plus petite pour discrétion */
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.6); /* Couleur discrète et semi-transparente */
+    border-radius: 50%;  /* Forme circulaire */
+    pointer-events: none; /* Empêche le point d'interagir avec les éléments */
+    transition: transform 0.1s ease, background-color 0.3s ease; /* Transition fluide */
+    transform: translate(-50%, -50%); /* Centrer le point sur le curseur */
+    z-index: 9999; /* Assurez-vous que le point est au-dessus des autres éléments */
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.4); /* Ombre discrète pour l'effet de profondeur */
+}

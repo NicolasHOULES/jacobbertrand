@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Ton Nom</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#experience">Expérience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Jacob BERTRAND</h2>
+            <p>Création de sites web élégants et expériences visuelles sans égales.</p>
+        </div>
+        <!-- Flèche ajoutée ici -->
+        <div class="scroll-down-arrow"></div>
+    </section>
+    
+    <section id="projects" class="projects">
+        <h2>Mes Projets</h2>
+        <div class="project-cards">
+            <div class="project-card" style="background-image: url('imgesiteecommerce.webp');">
+                <div class="overlay">
+                    <h3>Site e-Commerce de Vêtements</h3>
+                    <p>HTML5, CSS3, JavaScript, Node.js, MongoDB</p>
+                    <!-- Lien redirigeant vers projet1.html -->
+                    <a href="projet1.html" class="view-more">Voir plus</a>
+                </div>
+            </div>
+            <div class="project-card" style="background-image: url('todolisttemplate.png');">
+                <div class="overlay">
+                    <h3>Application de To-Do List Collaborative</h3>
+                    <p>React.js, Node.js, Express.js, MongoDB, WebSocket</p>
+                    <a href="projet2.html" class="view-more">Voir plus</a>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    
+
+    <section id="skills" class="skills">
+        <h2>Compétences</h2>
+        <div class="skills-list">
+            <div class="skill">
+                <i class="fab fa-html5"></i>
+                <span>HTML5</span>
+            </div>
+            <div class="skill">
+                <i class="fab fa-css3-alt"></i>
+                <span>CSS3</span>
+            </div>
+            <div class="skill">
+                <i class="fab fa-js-square"></i>
+                <span>JavaScript</span>
+            </div>
+            <div class="skill">
+                <i class="fab fa-react"></i>
+                <span>React</span>
+            </div>
+            <div class="skill">
+                <i class="fab fa-node"></i>
+                <span>Node.js</span>
+            </div>
+            <div class="skill">
+                <i class="fas fa-paint-brush"></i>
+                <span>UI/UX Design</span>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="experience" class="experience">
+        <h2>Expérience</h2>
+        <div class="experience-items">
+            <div class="experience-item">
+                <div class="experience-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <h3>Développeur Senior - TotalEnergie</h3>
+                <p class="date">2019 - Présent</p>
+                <p>Description de l'expérience chez XYZ, création de produits web haut de gamme.</p>
+            </div>
+            <div class="experience-item">
+                <div class="experience-icon">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <h3>Graphiste Web - Cdiscount</h3>
+                <p class="date">2017 - 2019</p>
+                <p>Conception de designs interactifs et de maquettes de sites web.</p>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="contact">
+        <h2>Contact</h2>
+        <div class="social-media">
+            <a href="https://www.linkedin.com" target="_blank" class="social-link">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com" target="_blank" class="social-link">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" class="social-link">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://dribbble.com" target="_blank" class="social-link">
+                <i class="fab fa-dribbble"></i>
+            </a>
+        </div>
+        <form action="#">
+            <input type="text" placeholder="Votre Nom" required>
+            <input type="email" placeholder="Votre Email" required>
+            <textarea placeholder="Votre Message" required></textarea>
+            <button type="submit">Envoyer</button>
+        </form>
+        <!-- Nouveau bouton "Télécharger CV" -->
+        <a href="CV_Jacob_Bertrand.pdf" download="CV_Jacob_Bertrand.pdf" class="download-btn">
+            Télécharger CV
+</a>
+    </section>
+    
+    
+<!-- Point qui suit le curseur -->
+<div id="cursor"></div>
+
+    
+    
+    
+    
+    
+
+    <footer>
+        <p>&copy; 2024 Jacob BERTRAND | Portfolio</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
